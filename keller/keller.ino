@@ -3,6 +3,7 @@
 const int pinInside = 3;
 const int pinOutside = 5;
 const int pinRelais = 10;
+const int pinLED = 12;
 float absHum[] = {0,0};
 SimpleDHT11 sensor;
 
@@ -23,7 +24,7 @@ void setup() {
   pinMode(pinInside, INPUT);
   pinMode(pinOutside, INPUT);
   pinMode(pinRelais, OUTPUT);
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(pinLED, OUTPUT);
 
 }
 
@@ -47,7 +48,7 @@ void loop() {
   }
   // LED flashing to indicate that the process is still running
   delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
+  digitalWrite(pinLED, HIGH);
   delay(1000);
-  digitalWrite(LED_BUILTIN, LOW); 
+  digitalWrite(pinLED, LOW); 
 }
